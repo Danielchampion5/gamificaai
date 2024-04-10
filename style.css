@@ -1,0 +1,182 @@
+/* Utilizando fontes especificas*/
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(Fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+:root {
+    --roxo-gamifica: #47208b;
+    --laranja-gamifica: #f06638;
+}
+
+/* Reset de CSS - Limpa configuracoes padrao que atrapalham */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Seletores - seleciona elementos para estilizar 
+Seletor por tag - todos os elementos com a tag 
+
+div {
+    height: 500px;
+    width: 200px;
+    background-color: bisque;
+    border: solid 8px black;
+}
+
+ seletor por classe - seleciona os elementos com a clase */
+
+.banner {
+    /* vh - porcentagem da altura da viewport */
+    height: 100vh;
+    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1)0%, rgba(53, 24, 104, 0.8)100%), url(img/WhatsApp\ Image\ 2024-04-04\ at\ 2.32.49\ PM.jpeg);
+    background-repeat: no-repeat;
+    background-position: 165% 40%;
+}
+
+header {
+    height: 165px;
+}
+
+.container-grid {
+    width: 80vw;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header div.container-grid {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 290px;
+}
+
+.menu {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu a {
+    text-decoration: underline transparent;
+    text-decoration-thickness: 2px;
+    font-family: "Anta";
+    font-size: 20px;
+    color: white;
+    transition: text-decoration 500ms ease;
+}
+
+.menu a:hover {
+    text-decoration-color: white;
+}
+
+.conteudo-banner {
+    /* Altura deve ser 100% da tela-altura do header*/
+    height: calc(100vh - 280px);
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-banner p {
+    font-size: 32px;
+    color: white;
+    font-family: "Anta";
+}
+
+#sobre {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 100px 25%;
+}
+
+h2 {
+    font-size: 28px;
+    font-family: "Anta";
+}
+
+#sobre p {
+    font-family: "Montserrat";
+    font-size: 17px;
+    text-align: left;
+}
+
+/* navegacao por ancora nao funciona sem id*/
+
+#cases {
+    height: 800px;
+    text-align: center;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+
+}
+
+.container-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cases h2 {
+    margin-bottom: 70px;
+}
+
+.card {
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--roxo-gamifica);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px 0px #000;
+}
+
+.card img {
+    height: 55%;
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.card p {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    color: white;
+    padding: 7%;
+}
+
+.card button {
+    height: 40px;
+    width: 90%;
+    background-color: var(--laranja-gamifica);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 500ms;
+}
+
+.card button:hover {
+    background-color: #ad4929;
+}
