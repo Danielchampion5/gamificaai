@@ -95,6 +95,38 @@ header img {
     font-family: "Anta";
 }
 
+.conteudo-banner span {
+    border-right: 6px solid var(--laranja-gamifica);
+    animation:
+        digitando 2s steps(40, end),
+        cursor 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*animacao span*/
+@keyframes digitando {
+    form {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--laranja-gamifica);
+    }
+}
+
 #sobre {
     height: 800px;
     display: flex;
@@ -288,7 +320,8 @@ h2 {
     resize: none;
 }
 
-.campo input:focus, .campo-textarea textarea:focus {
+.campo input:focus,
+.campo-textarea textarea:focus {
     outline: 2px solid var(--laranja-gamifica);
 }
 
@@ -309,4 +342,49 @@ h2 {
 
 #contato form button:hover {
     background-color: #ad4929;
+}
+
+#contato form input::placeholder,
+#contato form textarea::placeholder {
+    color: #b9b9b9;
+}
+
+footer {
+    background-color: var(--roxo-gamifica);
+    height: 290px;
+}
+
+footer .container-grid {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-sociais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    align-items: flex-end;
+}
+
+.redes-sociais p {
+    font-family: "Anta";
+    font-size: 24px;
+    color: white;
+}
+
+.icones-redes {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icones-redes a {
+    color: white;
+}
+
+.icones-redes a:hover {
+    color: var(--laranja-gamifica);
 }
