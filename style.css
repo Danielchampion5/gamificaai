@@ -393,6 +393,14 @@ footer .container-grid {
     color: var(--laranja-gamifica);
 }
 
+.menu-fechado {
+    display: none;
+}
+
+#icone-barras{
+    display: none;
+}
+
 @media screen and (max-width :1300px) {
     header {
         position: relative;
@@ -408,12 +416,10 @@ footer .container-grid {
     header svg {
         fill: white;
     }
-
-    nav.menu {
-        display: flex;
+    
+    nav.menu {     
         flex-direction: column;
-        justify-content: space-around;
-        /*align-items: flex-end;*/
+        justify-content: space-around;   
         background-color: #000000f0;
         height: 500px;
         width: 350px;
@@ -533,7 +539,7 @@ footer .container-grid {
 
     nav.menu {
         width: 100%;
-        display: none;
+        
     }
 
     #sobre {
