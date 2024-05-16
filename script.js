@@ -78,25 +78,6 @@ const selecionarSlide = (indiceSlide) => {
 }
 
 let listaCases = [
-    {
-        imagem: "https://unsplash.it/400?image=30",
-        descricao: "Uma empresa de tecnologia lanca um desafio de gamificacão onde os funcionários devem propor e implementar ideias inovadoras"
-    },
-
-    {
-        imagem: "https://unsplash.it/400?image=13",
-        descricao: "Uma empresa de consultoria cria uma narrativa interativa de gamificacão para seu programa de treinamento"
-    },
-
-    {
-        imagem: "https://unsplash.it/400?image=20",
-        descricao: "Uma empresa de vendas implementa uma competicão gamificada entre equipes que competem pelo topo do ranking"
-    },
-
-    {
-        imagem: "https://unsplash.it/400?image=43",
-        descricao: "Uma empresa de saude promove o bem-estar dos funcionários através de um desafio de gamificacão de condicionamento fisico"
-    }
 ]
 
 const renderizarCases = () => {
@@ -121,4 +102,38 @@ const renderizarCases = () => {
     })
 
     elementoLista.innerHTML = template
+}
+
+const carregarCases = () => {
+    fetch("http://localhost:3000/cases")
+    .then(resposta => resposta.json())
+    .then( (dados) => {
+        listaCases = dados
+        renderizarCases()
+    })
+
+    .catch(erro => console.error(erro))
+
+}
+
+const solicitarOrcamento = () => {
+    let valorNome = document.getElementById("campo-nome").value
+    let valorEmail = document.getElementById("campo-email").value
+    let valorDescricao = document.getElementById("campo-descricao").value
+    
+    let dadosForm = {
+        nome: valorNome,
+        email: valorEmail,
+        descricao: valorDescricao
+    }
+
+    fetch("http://localhost:3000/solicitacoes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dadosForm)
+    })
+    .then(resposta => console.log(resposta))
+    .catch(erro => console.error(erro))
 }
