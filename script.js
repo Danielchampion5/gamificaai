@@ -77,43 +77,34 @@ const selecionarSlide = (indiceSlide) => {
     banner.classList.add(slides[indiceSlide])
 }
 
-let listaCases = [
-]
+let listaCases = []
 
 const renderizarCases = () => {
     let elementoLista = document.getElementById("lista-cards")
 
-    //template Strings
+    // Template Strings
     let template = ""
 
-    listaCases.forEach(cardCase => {
-        template +=
-            `            
-        <div class="card">
-
-        <img src="${cardCase.imagem}" alt="">
-
-        <p>${cardCase.descricao}</p>
-
-        <button>Ver mais</button>
-
-        </div>
-    `
+    listaCases.forEach( cardCase => {
+        template += `<div class="card">
+            <img src="${cardCase.imagem}" alt="">
+            <p>${cardCase.descricao}</p>
+            <button>Ver mais</button>
+        </div>` 
     })
 
     elementoLista.innerHTML = template
 }
 
 const carregarCases = () => {
+    // Método HTTP GET - Read -> Leitura
     fetch("http://localhost:3000/cases")
-    .then(resposta => resposta.json())
+    .then( (resposta) => resposta.json() )
     .then( (dados) => {
         listaCases = dados
         renderizarCases()
     })
-
-    .catch(erro => console.error(erro))
-
+    .catch( erro => console.error(erro))
 }
 
 const solicitarOrcamento = (event) => {
